@@ -1,9 +1,9 @@
-name: Daily Commit Action 23f2005360@ds.study.iitm.ac.in
+name: Daily Commit Action
 
 on:
   schedule:
-    - cron: '40 19 * * *' # runs daily at 09:30 UTC (replace with your desired hour/minute)
-  workflow_dispatch: # allows manual triggering
+    - cron: '30 9 * * *' # runs daily at 09:30 UTC
+  workflow_dispatch:
 
 jobs:
   commit_job:
@@ -12,12 +12,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Git
+      - name: Configure Git with email 23f2005360@ds.study.iitm.ac.in
         run: |
           git config user.name "GitHub Action Bot"
           git config user.email "23f2005360@ds.study.iitm.ac.in"
 
-      - name: Make a daily commit
+      - name: Make daily commit 23f2005360@ds.study.iitm.ac.in
         run: |
           echo "Daily update $(date)" >> daily.txt
           git add daily.txt
